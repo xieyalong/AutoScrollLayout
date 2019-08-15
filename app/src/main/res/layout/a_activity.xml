@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:padding="12dp"
+        android:text="2、竖向自动滚动的TextView" />
+
+    <com.ly.autoscrolllayout.VerticalScrollTextView
+        android:id="@+id/v_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        app:vst_animDuration="2000"
+        app:vst_scrollOrientation="up"
+        app:vst_singleLine="true"
+        app:vst_sleepTime="2000"
+        app:vst_textColor="@color/colorAccent"
+        app:vst_textSize="14sp" />
+</LinearLayout>

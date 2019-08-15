@@ -9,6 +9,7 @@ import android.os.Message;
 import android.support.annotation.IntRange;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Printer;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -46,10 +47,10 @@ public class VerticalScrollTextView extends RelativeLayout {
     private int scrollOrientation;
 
     private List<String> mDataSource;
-
-    private TextView mTvContentTop;
-
-    private TextView mTvContentBottom;
+    //当前text
+    public TextView mTvContentTop;
+    //下一个text
+    public TextView mTvContentBottom;
 
     /**
      * 是否运行轮播图
@@ -161,7 +162,7 @@ public class VerticalScrollTextView extends RelativeLayout {
         }
 
         String next = mDataSource.get(mCurrentItemIndex);
-
+        System.out.println(">=mCurrentItemIndex="+mCurrentItemIndex+"---next="+next);
         if (next != null) {
             mTvContentBottom.setText(next);
         }
@@ -270,5 +271,14 @@ public class VerticalScrollTextView extends RelativeLayout {
 
     public void setScrollOrientation(@IntRange(from = 0, to = 1) int scrollOrientation) {
         this.scrollOrientation = scrollOrientation;
+    }
+    public  int getCurrentItemIndex(){
+        int i=0;
+        if (mCurrentItemIndex==0){
+            i=mDataSource.size()-1;
+        }else{
+            i=mCurrentItemIndex-1;
+        }
+        return i;
     }
 }

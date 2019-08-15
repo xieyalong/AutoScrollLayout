@@ -31,6 +31,7 @@
                 android:text="测试自动滚动的文字。。。。测试自动滚动的文字。。。。测试自动滚动的文字。。。。测试自动滚动的文字。。。。" />
 
             <TextView
+                android:id="@+id/vst"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#f5f5f5"
